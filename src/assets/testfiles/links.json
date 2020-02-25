@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Products",
+    "link": "/table/product"
+  },
+  {
+    "title": "Categories",
+    "link": "/tab"
+  },
+  {
+    "title": "Brands",
+    "link": "/card/brands"
+  },
+  {
+    "title": "Stock",
+    "link": "/accordion"
+  }
+]

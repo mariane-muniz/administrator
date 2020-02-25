@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Parameter",
+    "components": [
+      {
+        "type": "table",
+        "link": "component_table.json"
+      }
+    ]
+  },
+  {
+    "title": "Validators",
+    "components": [
+      {
+        "type": "form",
+        "link": "component_form.json"
+      }
+    ]
+  },
+  {
+    "title": "Actuators"
+  }
+]

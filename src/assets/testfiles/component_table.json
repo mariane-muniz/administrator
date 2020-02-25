@@ -1,0 +1,59 @@
+{
+  "actionGroups": [
+    {
+      "name": "edition",
+      "actions": [
+        {
+          "text": "Add new",
+          "icon": "plus",
+          "link": "/tab/product",
+          "btnType": "btn btn-sm btn-secondary",
+          "condition": ""
+        },
+        {
+          "text": "Delete",
+          "icon": "close",
+          "btnType": "btn btn-sm btn-secondary",
+          "execute": "/delete/[selected]"
+        },
+        {
+          "text": "Edit",
+          "icon": "pencil",
+          "condition": "data.selected.length >= 1",
+          "btnType": "btn btn-sm btn-secondary"
+        }
+      ]
+    },
+    {
+      "name": "Export",
+      "actions": [
+        {
+          "text": "Export selected",
+          "icon": "caret down",
+          "btnType": "btn btn-sm btn-secondary",
+          "actions": [
+            {
+              "text": "Export all registers",
+              "icon": "caret down",
+              "btnType": "btn btn-sm btn-secondary"
+            },
+            {
+              "text": "Export selected registers",
+              "icon": "caret down",
+              "btnType": "btn btn-sm btn-secondary"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "displayPagination": true,
+  "selected": ["123"],
+  "fields": ["ID", "Code", "Name", "Status"],
+  "values": [
+    ["1", "123", "Tenis Nike Shox", "ative"],
+    ["2", "132", "Tenis Adidas", "ative"],
+    ["3", "132", "Tenis Mizuno", "ative"],
+    ["4", "152", "Camisa do Brasil", "ative"]
+  ]
+}

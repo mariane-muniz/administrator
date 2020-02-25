@@ -1,0 +1,27 @@
+{
+  "title": "Accordion title",
+  "panels": [
+    {
+      "title": "Parameter",
+      "components": [
+        {
+          "type": "table",
+          "link": "component_table.json"
+        }
+      ]
+    },
+    {
+      "title": "Validators",
+      "components": [
+      ]
+    },
+    {
+      "title": "Actuators"
+    },
+    {
+      "title": "Responders"
+    }
+  ]
+}
+
+

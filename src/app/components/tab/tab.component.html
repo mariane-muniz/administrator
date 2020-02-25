@@ -1,0 +1,21 @@
+<clr-tabs>
+  <clr-tab *ngFor="let panel of data; let i = index">
+    <button clrTabLink>{{panel.title}}</button>
+    <clr-tab-content *clrIfActive="i == 0">
+      <div class="card">
+        <div class="card-block">
+          <ng-container *ngIf="panel.components != undefined && panel.components.length > 0; else nothingToShow">
+            <app-ad-banner *ngFor="let component of panel.components"
+              [type]="component.type"
+              [link]="component.link">
+            </app-ad-banner>
+          </ng-container>
+          <ng-template #nothingToShow>
+            Nothing to show.
+          </ng-template>
+          <br>
+        </div>
+      </div>
+    </clr-tab-content>
+  </clr-tab>
+</clr-tabs>

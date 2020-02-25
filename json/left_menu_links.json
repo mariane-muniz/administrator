@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Products",
+    "link": "list/products",
+    "icon": ""
+  },
+  {
+    "title": "Brands",
+    "link": "list/brands",
+    "icon": ""
+  },
+  {
+    "title": "Categories",
+    "link": "list/categories",
+    "icon": ""
+  },
+  {
+    "title": "Products",
+    "link": "list/products",
+    "icon": ""
+  },
+  {
+    "title": "Attributes",
+    "link": "list/products",
+    "icon": ""
+  },
+  {
+    "title": "Stock",
+    "link": "list/stocks",
+    "icon": ""
+  },
+  {
+    "title": "Medias",
+    "link": "list/medias",
+    "icon": ""
+  }
+]

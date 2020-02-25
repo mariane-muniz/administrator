@@ -1,0 +1,19 @@
+<ng-container *ngIf="data !== undefined; else wait">
+  <form clrForm [clrLayout]="data.align">
+    <ng-container *ngFor="let field of data.entries">
+      <clr-input-container>
+          <label class="clr-col-12 clr-col-md-2">{{field.label}}</label>
+          <input class="clr-col-12 clr-col-md-10"
+                 clrInput [type]="field.type" [value]="field.value"
+                 [placeholder]="field.placeHolder"/>
+          <clr-control-helper>{{field.helper}}</clr-control-helper>
+          <clr-control-error>{{field.errorMessage}}</clr-control-error>
+      </clr-input-container>
+    </ng-container>
+  </form>
+</ng-container>
+<ng-template #wait>
+  <span class="spinner spinner-inline">
+      Loading...
+  </span>
+</ng-template>

@@ -1,0 +1,23 @@
+{
+  "align": "vertical",
+  "entries": [
+    {
+      "name": "code",
+      "type": "text",
+      "value": "123",
+      "placeHolder": "Digite o código do produto",
+      "label": "código",
+      "helper": "Helper text that shows while it is pristine and valid",
+      "errorMessage": "Error message that appears after focus is lost and control is invalid"
+    },
+    {
+      "name": "name",
+      "type": "text",
+      "value": "Tenis nike",
+      "placeHolder": "Digite o nome do produto",
+      "label": "Nome",
+      "helper": "Helper text that shows while it is pristine and valid",
+      "errorMessage": "Error message that appears after focus is lost and control is invalid"
+    }
+  ]
+}

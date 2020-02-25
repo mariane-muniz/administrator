@@ -1,0 +1,9 @@
+<section class="nav-group">
+  <ul class="nav-list">
+    <li *ngFor="let link of links">
+      <a [routerLink]="[link.link]" routerLinkActive="true" class="nav-link">
+        {{link.title}}
+      </a>
+    </li>
+  </ul>
+</section>
