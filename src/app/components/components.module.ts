@@ -10,9 +10,9 @@ import {TableComponent} from './table/table.component';
 import {FragmentModule} from '../fragments/fragment.module';
 import {ModalComponent} from './modal/modal.component';
 import {TabComponent} from './tab/tab.component';
-import {AdService} from '../ad.service';
-import {AdBannerComponent} from '../ad-banner.component';
-import {AdDirective} from '../ad.directive';
+import {AdService} from '../binding/ad.service';
+import {AdBannerComponent} from '../binding/ad-banner.component';
+import {AdDirective} from '../binding/ad.directive';
 import {ClarityFormComponent} from './clarity-form/clarity-form.component';
 
 export const entryComponents: any[] = [

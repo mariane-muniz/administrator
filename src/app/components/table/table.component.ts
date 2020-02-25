@@ -2,7 +2,7 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {TableData} from '../../data/table.data';
 import {DataTestService} from '../../services/data-test.service';
 import {Subscription} from 'rxjs';
-import {AdComponent} from '../../ad.component';
+import {AdComponent} from '../../binding/ad.component';
 
 @Component({
   selector: 'app-component-table',

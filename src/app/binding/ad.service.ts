@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 
 import {HeroProfileComponent} from './hero-profile.component';
 import {AdItem} from './ad-item';
-import {TableComponent} from './components/table/table.component';
-import {ClarityFormComponent} from './components/clarity-form/clarity-form.component';
+import {TableComponent} from '../components/table/table.component';
+import {ClarityFormComponent} from '../components/clarity-form/clarity-form.component';
 
 @Injectable()
 export class AdService {

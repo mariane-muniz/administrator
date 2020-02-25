@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AdComponent} from '../../ad.component';
+import {AdComponent} from '../../binding/ad.component';
 import {DataTestService} from '../../services/data-test.service';
 import {TabData} from '../../data/tab.data';
 

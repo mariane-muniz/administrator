@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AdComponent} from '../../ad.component';
+import {AdComponent} from '../../binding/ad.component';
 
 @Component({
   selector: 'app-modal',

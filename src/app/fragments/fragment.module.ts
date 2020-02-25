@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {HeroJobAdComponent} from '../hero-job-ad.component';
-import {HeroProfileComponent} from '../hero-profile.component';
+import {HeroJobAdComponent} from '../binding/hero-job-ad.component';
+import {HeroProfileComponent} from '../binding/hero-profile.component';
 import {TableActionsComponent} from './table-actions/table-actions.component';
 import {ClarityModule, ClrDropdownModule, ClrIconModule, ClrModalModule} from '@clr/angular';
 
