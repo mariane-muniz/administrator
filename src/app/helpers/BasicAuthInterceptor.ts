@@ -6,18 +6,18 @@ import { AuthenticationService } from '../services/authentication.service';
 export class BasicAuthInterceptor implements HttpInterceptor {
 
     constructor(private authenticationService: AuthenticationService) { }
-    
+
     intercept(
-        req: import("@angular/common/http").HttpRequest<any>, 
+        request: import("@angular/common/http").HttpRequest<any>,
         next: import("@angular/common/http").HttpHandler): import("rxjs").Observable<import("@angular/common/http").HttpEvent<any>> {
-        const currentUser = this.authenticationService.currentUser;
-        if (currentUser && currentUser.authdata) {
-            req.clone({
+        const currentUser = this.authenticationService.currentUser; 
+        if (currentUser != undefined && currentUser != null) {
+            request = request.clone({
                 setHeaders: {
-                    Authorization: `${currentUser.authdata}`
+                    Authorization: `${currentUser}`
                 }
-            })
+            });
         }
-        return next.handle(req);
+        return next.handle(request);
     }
 }

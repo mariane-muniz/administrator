@@ -1,5 +1,5 @@
 <div class="login-wrapper">
-  <form class="login" (ngSubmit)="onSubmit()">
+  <form class="login" [formGroup]="form"(ngSubmit)="onSubmit()">
     <section class="title">
       <h3 class="welcome">Welcome to</h3>
       Aurora
@@ -8,21 +8,22 @@
     <div class="login-group">
       <clr-input-container>
         <label class="clr-sr-only">Username</label>
-        <input type="text" name="username" clrInput placeholder="Username"/>
+        <input type="text" formControlName="username" clrInput placeholder="Username"/>
       </clr-input-container>
       <clr-password-container>
         <label class="clr-sr-only">Password</label>
-        <input type="password" name="password" clrPassword placeholder="Password"/>
+        <input type="password" formControlName="password" clrPassword placeholder="Password"/>
       </clr-password-container>
-      <clr-checkbox-wrapper>
+      <clr-checkbox-wrapper style="display: none;">
         <label>Remember me</label>
         <input type="checkbox" name="rememberMe" clrCheckbox/>
       </clr-checkbox-wrapper>
       <div class="error active" *ngIf="message != undefined">
         {{message}}
       </div>
-      <button type="submit" class="btn btn-primary">NEXT1</button>
-      <a href="javascript://" class="signup">Sign up for a Company ID</a>
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid || sendingForm">NEXT</button>
+      <div class="progress loop" *ngIf="sendingForm"><progress></progress></div>
+      <a class="signup">Sign up for a Company ID</a>
       <br/>
     </div>
   </form>

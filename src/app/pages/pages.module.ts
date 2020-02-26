@@ -4,7 +4,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {LoginComponent} from './login/login.component';
 import {TableComponent} from './table/table.component';
 import {ComponentsModule} from '../components/components.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ClarityModule} from '@clr/angular';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {CardsComponent} from './cards/cards.component';
@@ -31,6 +31,7 @@ const pages: any[] = [
     CommonModule,
     ComponentsModule,
     FormsModule,
+    ReactiveFormsModule,
     ClarityModule,
     DragDropModule,
     NgxGraphModule,

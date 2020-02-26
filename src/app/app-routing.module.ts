@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'table/:entity', component: TableComponent, canActivate: [AuthGuard]},
   {path: 'card/:entity', component: CardsComponent, canActivate: [AuthGuard]},
   {path: 'tab/:entity', component: TabComponent, canActivate: [AuthGuard]},
-  {path: 'tab', component: TabComponent, canActivate: [AuthGuard]},
+  {path: 'tab', component: TabComponent, canActivate: []},
   {path: 'login', component: LoginComponent},
   {path: 'accordion', component: ActionEditorComponent, canActivate: [AuthGuard]},
   {path: '404', component: NotFoundComponent, canActivate: [AuthGuard]},
