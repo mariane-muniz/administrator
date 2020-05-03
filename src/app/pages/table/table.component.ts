@@ -1,8 +1,10 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {DataTestService} from '../../services/data-test.service';
-import {Subscription} from 'rxjs';
-import {PageData} from '../../data/page.data';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { EntityActionRuleData } from 'src/app/data/entity.action.rule.data';
+import { Subscription } from 'rxjs';
+import { EventService } from 'src/app/services/event.service';
+import { EventInfo } from 'src/app/data/EventInfo';
+import { DataTestService } from 'src/app/services/data-test.service';
 
 @Component({
   selector: 'app-table',
@@ -11,30 +13,54 @@ import {PageData} from '../../data/page.data';
 })
 export class TableComponent implements OnInit, OnDestroy {
 
-  private data: PageData;
-  private entity: string;
+  public entity: string;
+  public pathParams: EntityActionRuleData;
   private routeSubscribe: Subscription;
-  private serviceSubscription: Subscription;
+  private entityEventSubscribe: Subscription;
 
-  constructor(private route: ActivatedRoute,
-              private dataTestService: DataTestService) {
-  }
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private dataTestService: DataTestService
+    ) { }
 
   ngOnInit() {
-    this.routeSubscribe = this.route.paramMap.subscribe(params => {
-      this.entity = 'table/' + params.get('entity');
-      this.serviceSubscription = this.dataTestService
-        .getData('page_table.json').subscribe(tablePageData => {
-          this.data = tablePageData;
+    this.changeRoute();
+    this.populateTable();
+    this.subscribeEvents();
+  }
+
+  private changeRoute(): void {
+    const queryParams: Params = { };
+    this.router.navigate(
+      [], 
+      {
+        relativeTo: this.activatedRoute,
+        queryParams: queryParams, 
+        queryParamsHandling: 'merge', // remove to replace all query params by provided
       });
+  }
+
+  private subscribeEvents(): void {
+    this.entityEventSubscribe = EventService.event.subscribe((event: EventInfo) => { 
+      if (event.action == "table-entity-delete") { console.log("delete1");
+        if(EventService.sharedIds.length == 1) { console.log("delete");
+          let code = EventService.sharedIds[0][0];
+          this.dataTestService.deleteRemoteData(event.entity, code)
+            .subscribe(r => { this.populateTable(); });
+        } 
+      }
     });
   }
 
-  ngOnDestroy(): void {
-    this.serviceSubscription.unsubscribe();
-    this.serviceSubscription = null;
+  private populateTable(): void {
+    this.routeSubscribe = this.activatedRoute.paramMap.subscribe(params => {
+      this.pathParams = new EntityActionRuleData(params.get('entity'), true, true);
+    });
+  }
+
+  ngOnDestroy() {
     this.routeSubscribe.unsubscribe();
-    this.routeSubscribe = null;
+    this.entityEventSubscribe.unsubscribe();
   }
 }
-

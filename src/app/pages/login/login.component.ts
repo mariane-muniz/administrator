@@ -36,14 +36,16 @@ export class LoginComponent implements OnInit {
       .subscribe(response => {
         let token = response.headers.get('Authorization');
         localStorage.setItem('access_token', token);
-        this.route.navigate(['/']);
+        setTimeout(() => {
+          this.route.navigate(['/']);  
+        }, 5000);
       }, error => {
           switch (error.status) {
             case 401:
               this.message = 'Nao e possivel logar com esses dados.';
               break;
             default:
-              this.message = 'Nao e possivel conectar nesse momento.';
+              this.message = 'Nao e possivel conectar nesse momento. [' + error.message + ']';
               break;
           }
           this.sendingForm = false;

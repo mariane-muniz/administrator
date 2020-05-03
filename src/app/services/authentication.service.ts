@@ -19,12 +19,16 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<HttpResponse<Config>> {
+
+    let loginPath: string = "" + environment.serverUrl
+      + environment.apiPath + environment.authPath + "login";
+
     return this.httpClient.post(
-      `${environment.apiUrl}/api/aurora-auth/login`, 
-        { username, password }, {observe: 'response'}
+      loginPath,
+      { username, password }, 
+      { observe: 'response' }
     );
   }
-
 
   logout() {
     localStorage.removeItem('access_token');

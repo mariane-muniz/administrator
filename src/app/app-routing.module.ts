@@ -8,16 +8,19 @@ import {CardsComponent} from './pages/cards/cards.component';
 import {TabComponent} from './pages/tab/tab.component';
 import {ActionEditorComponent} from './pages/action-editor/action-editor.component';
 import { AuthGuard } from './services/AuthGuard';
+import { ModelingComponent } from './pages/modeling/modeling.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'table/:entity', component: TableComponent, canActivate: [AuthGuard]},
   {path: 'card/:entity', component: CardsComponent, canActivate: [AuthGuard]},
+  {path: 'tab/:entity/:code', component: TabComponent, canActivate: [AuthGuard]},
   {path: 'tab/:entity', component: TabComponent, canActivate: [AuthGuard]},
-  {path: 'tab', component: TabComponent, canActivate: []},
+  {path: 'tab', component: TabComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'accordion', component: ActionEditorComponent, canActivate: [AuthGuard]},
   {path: '404', component: NotFoundComponent, canActivate: [AuthGuard]},
+  {path: 'modeling', component: ModelingComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: '/404'}
 ];
 

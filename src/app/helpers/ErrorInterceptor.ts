@@ -13,7 +13,7 @@ export class ErrorInterceptor implements HttpInterceptor {
         req: import("@angular/common/http").HttpRequest<any>, 
         next: import("@angular/common/http").HttpHandler): import("rxjs").Observable<import("@angular/common/http").HttpEvent<any>> {
         return next.handle(req).pipe(catchError(err => {
-            if (err.status === 401) {
+            if (err.status === 401 && !req.url.endsWith('login')) {
                 // auto logout if 401 response 
                 this.authenticationService.logout();
                 location.reload(true);

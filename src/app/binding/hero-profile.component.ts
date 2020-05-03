@@ -1,6 +1,7 @@
 import { Component, Input }  from '@angular/core';
 
 import { AdComponent }       from './ad.component';
+import { EntityActionRuleData } from '../data/entity.action.rule.data';
 
 @Component({
   template: `
@@ -15,7 +16,7 @@ import { AdComponent }       from './ad.component';
   `
 })
 export class HeroProfileComponent implements AdComponent {
-  link: string;
+  link: EntityActionRuleData;
   data: any;
 }
 

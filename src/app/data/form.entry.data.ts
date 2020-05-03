@@ -1,9 +1,10 @@
 export class FormEntryData {
-  value: string;
+  code: string;
+  errorMessage: string;
+  helper: string;
   label: string;
   placeHolder: string;
+  text: string;
   type: string;
-  name: string;
-  helper: string;
-  errorMessage: string;
+  value: string;
 }

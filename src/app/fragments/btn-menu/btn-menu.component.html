@@ -1,0 +1,8 @@
+<ng-container *ngFor="let action of actions">
+    <button class="btn btn-outline"  
+        class="btn btn-link" 
+        [disabled]="action.disabled"
+        (click)="emitEvent(action.code)">
+        {{action.text}}
+</button>
+</ng-container>

@@ -1,16 +1,21 @@
-<ng-container *ngIf="data !== undefined; else wait">
-  <form clrForm [clrLayout]="data.align">
-    <ng-container *ngFor="let field of data.entries">
-      <clr-input-container>
-          <label class="clr-col-12 clr-col-md-2">{{field.label}}</label>
-          <input class="clr-col-12 clr-col-md-10"
-                 clrInput [type]="field.type" [value]="field.value"
-                 [placeholder]="field.placeHolder"/>
-          <clr-control-helper>{{field.helper}}</clr-control-helper>
-          <clr-control-error>{{field.errorMessage}}</clr-control-error>
+<ng-container *ngIf="form !== undefined; else wait">
+  <form clrForm [formGroup]="form">
+    <ng-container *ngFor="let field of this.form.controls | keyvalue">
+        <clr-input-container *ngIf="field.value.type == 'string'">
+          <label class="clr-col-12 clr-col-md-4">{{field.key}}</label>
+          <input class="clr-col-12 clr-col-md-8" clrInput 
+            [formControlName]="field.key" 
+            [type]="field.value.type" 
+            [value]="field.value.value" />
       </clr-input-container>
-    </ng-container>
-  </form>
+      <clr-toggle-container *ngIf="field.value.type == 'boolean'">
+        <label class="clr-col-12 clr-col-md-4">{{field.key}}</label>
+        <clr-toggle-wrapper>
+          <input type="checkbox" clrToggle value="option1"  class="clr-col-12 clr-col-md-8" 
+            [formControlName]="field.key" 
+            [checked]="field.value.value == 'true'"/>
+        </clr-toggle-wrapper>
+      </clr-toggle-container>
 </ng-container>
 <ng-template #wait>
   <span class="spinner spinner-inline">

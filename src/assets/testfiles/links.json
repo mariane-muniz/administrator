@@ -5,14 +5,18 @@
   },
   {
     "title": "Categories",
-    "link": "/tab"
+    "link": "/table/category"
   },
   {
-    "title": "Brands",
-    "link": "/card/brands"
+    "title": "Reviews",
+    "link": "/table/review"
   },
   {
-    "title": "Stock",
-    "link": "/accordion"
+    "title": "Service",
+    "link": "/table/service"
+  },
+  {
+    "title": "Manufacturer",
+    "link": "/table/manufacturer"
   }
 ]

@@ -6,15 +6,8 @@
   </nav>
   <div class="content-container">
     <div class="content-area">
-      <ng-container *ngIf="data !== undefined; else wait">
-        <h3>{{data.title}}</h3>
-        <app-component-table [link]="data.link"></app-component-table>
-      </ng-container>
-      <ng-template #wait>
-        <span class="spinner spinner-inline">
-            Loading...
-        </span>
-      </ng-template>
+      <fragment-btn-menu [path]="pathParams"></fragment-btn-menu>
+      <app-component-table [path]="pathParams"></app-component-table>
     </div>
     <nav class="sidenav">
       <section class="sidenav-content">

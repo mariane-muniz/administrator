@@ -13,6 +13,7 @@ import {ActionEditorComponent} from './action-editor/action-editor.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {NgxGraphModule} from '@swimlane/ngx-graph';
 import {FragmentModule} from '../fragments/fragment.module';
+import { ModelingComponent } from './modeling/modeling.component';
 
 const pages: any[] = [
   DashboardComponent,
@@ -22,6 +23,7 @@ const pages: any[] = [
   CardsComponent,
   TabComponent,
   ActionEditorComponent,
+  ModelingComponent
 ];
 
 @NgModule({

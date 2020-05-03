@@ -1,0 +1,25 @@
+<app-component-header-alert></app-component-header-alert>
+<div class="main-container">
+    <app-component-header></app-component-header>
+    <nav class="subnav">
+        <app-component-subnav></app-component-subnav>
+    </nav>
+    <div class="content-container">
+        <div class="content-area">
+            <h1>Update Backend model caching</h1>
+            <clr-button-group [clrMenuPosition]="'bottom-right'">
+                <clr-button class="btn  btn-link" [clrLoading]="submitBtnState" (click)="requestToStart()">Start</clr-button>
+              </clr-button-group>
+              <p>{{currentMessage}}</p>
+            <div class="progress-block">
+                <label for="demoProgressBar">Progress</label>
+                <clr-progress-bar id="demoProgressBar" [clrValue]="progressBar"></clr-progress-bar>
+            </div>
+        </div>
+        <nav class="sidenav">
+            <section class="sidenav-content">
+                <app-component-sidebar></app-component-sidebar>
+            </section>
+        </nav>
+    </div>
+</div>

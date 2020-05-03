@@ -5,10 +5,7 @@
       <div class="card">
         <div class="card-block">
           <ng-container *ngIf="panel.components != undefined && panel.components.length > 0; else nothingToShow">
-            <app-ad-banner *ngFor="let component of panel.components"
-              [type]="component.type"
-              [link]="component.link">
-            </app-ad-banner>
+            <app-ad-banner *ngFor="let component of panel.components" [type]="component.type" [link]="link"></app-ad-banner>
           </ng-container>
           <ng-template #nothingToShow>
             Nothing to show.

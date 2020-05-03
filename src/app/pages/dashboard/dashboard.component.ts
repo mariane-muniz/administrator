@@ -13,9 +13,5 @@ export class DashboardComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get(`${environment.apiUrl}/api/storage-aurora/test`)
-      .subscribe(result => {
-        console.info(result);
-      });
   }
 }

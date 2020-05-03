@@ -4,8 +4,11 @@
 
 export const environment = {
   production: false,
-  // apiUrl: 'http://192.168.0.14:8080'
-  apiUrl: 'http://localhost:8080'
+  // serverUrl: 'http://configuration-server.com:8080/',
+  serverUrl: 'http://192.168.0.11:8080/',
+  apiPath: 'api/',
+  backendPath: 'aurora-backend/',
+  authPath: 'aurora-auth/'
 };
 
 /*

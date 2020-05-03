@@ -14,6 +14,7 @@ import {AdService} from '../binding/ad.service';
 import {AdBannerComponent} from '../binding/ad-banner.component';
 import {AdDirective} from '../binding/ad.directive';
 import {ClarityFormComponent} from './clarity-form/clarity-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export const entryComponents: any[] = [
   SubnavComponent,
@@ -40,7 +41,9 @@ components.push(entryComponents, AdDirective);
     ClrIconModule,
     RouterModule,
     ClarityModule,
-    FragmentModule
+    FragmentModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ComponentsModule {

@@ -6,16 +6,16 @@
   </nav>
   <div class="content-container">
     <div class="content-area">
+      <fragment-alert [message]="message" [active]="active" [type]="alertType"></fragment-alert>
+      <fragment-btn-menu [path]="actionsUrl"></fragment-btn-menu>
       <ng-container *ngIf="data !=null; else wait">
-        <h3>{{data.title}}</h3>
-        <app-component-tab [link]="data.link"></app-component-tab>
+        <app-component-tab [link]="actionsUrl"></app-component-tab>
       </ng-container>
       <ng-template #wait>
         <span class="spinner spinner-inline">
           Loading...
         </span>
       </ng-template>
-
     </div>
     <nav class="sidenav">
       <section class="sidenav-content">

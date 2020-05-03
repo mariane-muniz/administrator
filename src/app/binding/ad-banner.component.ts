@@ -3,6 +3,7 @@ import {Component, Input, OnInit, ViewChild, ComponentFactoryResolver} from '@an
 import {AdDirective} from './ad.directive';
 import {AdComponent} from './ad.component';
 import {AdService} from './ad.service';
+import { EntityActionRuleData } from '../data/entity.action.rule.data';
 
 @Component({
   selector: 'app-ad-banner',
@@ -11,7 +12,7 @@ import {AdService} from './ad.service';
 export class AdBannerComponent implements OnInit {
 
   @Input() type: string;
-  @Input() link: string;
+  @Input() link: EntityActionRuleData;
   @ViewChild(AdDirective, {static: true}) adHost: AdDirective;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,

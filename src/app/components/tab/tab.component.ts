@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {AdComponent} from '../../binding/ad.component';
 import {DataTestService} from '../../services/data-test.service';
 import {TabData} from '../../data/tab.data';
+import { EntityActionRuleData } from 'src/app/data/entity.action.rule.data';
 
 @Component({
   selector: 'app-component-tab',
@@ -10,15 +11,22 @@ import {TabData} from '../../data/tab.data';
 })
 export class TabComponent implements OnInit, AdComponent {
 
-  @Input() link: string;
-  private data: TabData[];
+  @Input() link: EntityActionRuleData;
+  public data: TabData[];
   firstTab = true;
 
-  constructor(private dataTestService: DataTestService) {
+  constructor(
+    private dataTestService: DataTestService) {
   }
 
   ngOnInit() {
-    this.dataTestService.getData('component_tab.json').subscribe(data => {
+    let path = 'tab/' + this.link.entity;
+    if (this.link.code != null) path += '/' + this.link.code;
+    this.updateComponent(path);
+  }
+
+  private updateComponent(path: string): void {
+    this.dataTestService.getRemoteData(path).subscribe(data => {
       this.data = data;
     });
   }
